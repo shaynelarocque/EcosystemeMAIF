@@ -17,7 +17,7 @@ record_types:
     stroke: "#2A9D8F"  # Teal
   Organisation non gouvernementale:
     fill: "#F4A261"  # Sandy brown
-    stroke: "#264653"  # Dark blue
+    stroke: "#264653"  # Dark blue  
   Entreprises privées:
     fill: "#2A9D8F"  # Teal green
     stroke: "#E9C46A"  # Saffron
@@ -55,8 +55,8 @@ node_size_method: degree
 node_size: 10
 node_size_max: 20
 node_size_min: 2
-attraction_force: 200
-attraction_distance_max: 250
+attraction_force: 600
+attraction_distance_max: 800
 attraction_vertical: 0
 attraction_horizontal: 0
 views: {}
@@ -74,4 +74,4 @@ bibliography: ""
 csl_locale: ""
 css_custom: ""
 devtools: false
-lang: en
+lang: fr
