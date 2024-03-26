@@ -11,43 +11,43 @@ focus_max: 2
 record_types:
   undefined:
     fill: "#7A7A3E"
-    stroke: "#858585"
+    stroke: "#7a7a7a"
   Gouvernement:
     fill: "#E63946"  # Bright red
-    stroke: "#2A9D8F"  # Teal
+    stroke: "#7a7a7a"  # Teal
   Organisation non gouvernementale:
     fill: "#F4A261"  # Sandy brown
-    stroke: "#264653"  # Dark blue  
+    stroke: "#7a7a7a"  # Dark blue  
   Entreprises privées:
     fill: "#2A9D8F"  # Teal green
-    stroke: "#E9C46A"  # Saffron
+    stroke: "#7a7a7a"  # Saffron
   Individuels:
     fill: "#F77F00"  # Bright orange
-    stroke: "#003049"  # Dark blue
+    stroke: "#7a7a7a"  # Dark blue
   Connexion:
     fill: "#9C89B8"  # Soft purple
-    stroke: "#F0A6CA"  # Pink
+    stroke: "#7a7a7a"  # Pink
   Gouvernement Locale:
     fill: "#43AA8B"  # Sea green
-    stroke: "#577590"  # Cool grey
+    stroke: "#7a7a7a"  # Cool grey
   Gouvernement Federale:
     fill: "#7400B8"  # Vivid purple
-    stroke: "#4EA8DE"  # Sky blue
+    stroke: "#7a7a7a"  # Sky blue
   Lieux:
     fill: "#0077B6"  # Deep sky blue
-    stroke: "#FAD02E"  # Sunflower yellow
+    stroke: "#7a7a7a"  # Sunflower yellow
   Mouvement activiste:
     fill: "#E76F51"  # Burnt sienna
-    stroke: "#88B04B"  # Bud green
+    stroke: "#7a7a7a"  # Bud green
 link_types:
   undefined:
     stroke: simple
-    color: "#e1e1e1"
+    color: "#7a7a7a"
 references_as_nodes: false
 references_type_label: references
 record_filters: []
-graph_background_color: "#ffffff"
-graph_highlight_color: "#ff6a6a"
+graph_background_color: "#333333"
+graph_highlight_color: "#7a7a7a"
 graph_highlight_on_hover: true
 graph_text_size: 10
 graph_arrows: true
@@ -72,6 +72,6 @@ link_symbol: ""
 csl: ""
 bibliography: ""
 csl_locale: ""
-css_custom: ""
+css_custom: "./styles.css"
 devtools: false
 lang: fr

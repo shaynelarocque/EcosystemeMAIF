@@ -1,0 +1,660 @@
+/** Page
+------------------------------------------------------------*/
+body {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--sans);
+    font-size: 1.4rem;
+}
+
+/* ---
+    
+    Containers --- */
+article {
+    padding: 1.2rem 0;
+}
+
+article+article:not(.record) {
+    border-top: 1px solid var(--border-light-color);
+}
+
+/** Elements
+    ------------------------------------------------------------*/
+
+a {
+    text-decoration: none;
+}
+
+/* ---
+    
+    Buttons --- */
+button {
+    cursor: pointer;
+    margin: 0.8rem 0.4rem;
+    font-size: 1.3rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.btn.active,
+.btn[data-active='true'] {
+    border: 1px solid black;
+}
+
+[onclick] {
+    cursor: pointer;
+}
+
+/* ---
+    
+    Inputs --- */
+.outline {
+    outline: var(--cosma-blue) solid 1px;
+}
+
+label {
+    cursor: pointer;
+}
+
+input {
+    font-size: 1.3rem;
+    padding: 0.4rem;
+    border-radius: 4px;
+}
+
+input[type='checkbox'] {
+    cursor: pointer;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0 0.8rem 0 0;
+}
+
+input[type='range'] {
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* ---
+    
+    Lists --- */
+details {
+    padding: 0.8rem 0 1.2rem 0;
+    border-radius: 4px;
+}
+
+details[data-sort] .sort-box:not(.active) {
+    display: none;
+}
+
+details>summary {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin: 1rem 0 0.8rem 0;
+    font-weight: bold;
+    outline: none;
+    padding: 0.6rem;
+}
+
+summary+button {
+    margin: 1.2rem 0;
+}
+
+.list-content-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list-content-container ul li {
+    padding: 0.5rem 0 0.5rem 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.list-content-container ul li:hover {
+    background-color: var(--background-gray);
+}
+
+.list-content-container .menu-controls-list {
+    margin-top: 1.5rem;
+}
+
+.list-content-container ul li span:last-of-type:not(.badge) {
+    line-height: 1.5;
+}
+
+.record-type-points {
+    /* colored dot before links */
+    font-size: 0.8em;
+    padding-right: 0.8em;
+}
+
+.menu-controls-container p:first-child {
+    font-weight: bold;
+}
+
+.menu-types-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter {
+    margin: 0.1em 0;
+}
+
+.menu-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1em;
+}
+
+.menu-tags-container label {
+    display: flex;
+    align-items: center;
+    margin: 0.15em 0.15em 0.15em 0;
+}
+
+.menu-tags-container .label {
+    margin: 0 0.2em;
+}
+
+.menu-tags-container .badge {
+    margin: 0.15em 0.15em 0.15em 0;
+}
+
+.menu-tags-container input[type='checkbox'] {
+    margin: 0.2em;
+}
+
+.menu-index-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-index-list.reverse {
+    flex-direction: column-reverse;
+}
+
+/* ---
+    
+    Texts --- */
+a {
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cosma-blue);
+}
+
+code {
+    font-family: var(--mono);
+}
+
+/* ---
+    
+    Tips --- */
+.badge {
+    display: inline-block;
+    background-color: var(--indicator-background-color);
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    margin-left: 0.2rem;
+    text-align: center;
+    line-height: 1.8rem;
+    white-space: nowrap;
+    font-family: var(--mono);
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+.badge:hover {
+    transform: scale(1.05);
+}
+
+.tooltip {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    background-color: var(--cosma-blue);
+    border-radius: 50%;
+    color: white;
+    width: 20px;
+    text-align: center;
+    height: 20px;
+    font-weight: normal;
+    transition: transform 0.3s ease;
+}
+
+.tooltip:hover {
+    transform: scale(1.1);
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    line-height: 130%;
+    background-color: var(--cosma-blue-dark);
+    box-shadow: var(--shadow);
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    width: 160px;
+    bottom: 130%;
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/** Menu (left side board)
+    ------------------------------------------------------------*/
+
+aside.menu {
+    box-shadow: var(--shadow);
+    z-index: 100;
+    overflow: auto;
+    height: 100vh;
+    flex: 0 0 30rem;
+    margin: 0;
+    padding: 0 30px 50px 30px;
+    background-color: var(--background-gray);
+    color: var(--offblack);
+    transition: transform 0.5s ease;
+}
+
+aside.menu:not(.active) {
+    transform: translateX(-100%);
+}
+
+/* ---
+    
+    User title --- */
+.title {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    color: var(--cosma-blue-dark);
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ---
+    
+    Toolbar --- */
+#menu-electron {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+#menu-electron button {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+}
+
+#menu-electron button+button {
+    margin-left: 7px;
+}
+
+#menu-electron button svg {
+    height: 25px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+#menu-electron button:hover svg {
+    transform: scale(1.1);
+}
+
+#menu-electron button.icon-chevron svg {
+    height: 18px;
+}
+
+/* ---
+    
+    Spatialization load bar --- */
+.load-bar {
+    height: 0.5em;
+    padding: 0.2rem;
+    display: flex;
+    margin: 1rem 0;
+    background-color: var(--indicator-background-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.load-bar #load-bar-value {
+    background-color: var(--cosma-blue);
+    flex-basis: 100%;
+    animation: load 2s ease;
+}
+
+@keyframes load {
+    0% {
+        flex-basis: 0;
+    }
+
+    100% {
+        flex-basis: 100%;
+    }
+}
+
+/* ---
+    
+    Search input & list --- */
+.search-bar {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+#search-result-list {
+    margin-bottom: 1rem;
+}
+
+#search-result-list li {
+    cursor: pointer;
+}
+
+/* ---
+    
+    Controls from graph params --- */
+.menu-controls input[type='number'] {
+    width: 7rem;
+    margin-left: 1rem;
+}
+
+.menu-controls-title {
+    font-weight: bold;
+}
+
+/* ---
+    
+    Footer --- */
+aside.menu footer {
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 30rem;
+    margin-top: 1.8rem;
+    background-color: inherit;
+    padding: 1rem 0 1rem 1rem;
+    text-transform: uppercase;
+    border-top: solid 1px var(--border-color);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+aside.menu footer span:not(:first-of-type)::before {
+    content: '—';
+}
+
+/** Record container (right side board)
+    ------------------------------------------------------------*/
+
+main.record-container {
+    z-index: 100;
+    top: 0;
+    right: 0;
+    padding: 1.5rem 2.5rem;
+    flex: 0 0 50rem;
+    height: 100vh;
+    overflow: auto;
+    background-color: var(--offwhite);
+    color: var(--offblack);
+    box-shadow: var(--shadow);
+    transition: transform 0.5s ease;
+}
+
+main.record-container:not(.active) {
+    transform: translateX(100%);
+}
+
+.empty-record {
+    margin-top: 4rem;
+}
+
+.empty-record p {
+    font-size: 1.8rem;
+}
+
+.record:not(.active) {
+    display: none;
+}
+
+/* ---
+    
+    Record header --- */
+.record header {
+    padding-bottom: 2rem;
+    margin-bottom: 3.5rem;
+    border-bottom: 1px solid var(--gray);
+}
+
+.record header div+div,
+.record-focus-container {
+    margin-top: 1rem;
+}
+
+.record header div span:first-of-type,
+.record-focus-container>span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 1rem;
+}
+
+.record-last-edit {
+    display: none;
+}
+
+.record-focus-lever {
+    display: none;
+}
+
+.record-focus-lever input {
+    width: 80%;
+}
+
+/* ---
+    
+    Record content --- */
+.record-content a {
+    text-decoration: underline;
+}
+
+.record img {
+    height: auto;
+    max-width: 100%;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.record img:hover {
+    transform: scale(1.02);
+}
+
+.record header img {
+    height: auto;
+    max-width: 100%;
+    margin: 1.5rem 0;
+}
+
+/* From Typesafe.css, by Bradley Taunt */
+
+.record main {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-family: var(--serif);
+}
+
+.record main h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--sans);
+    margin: 3rem 0 0 0;
+}
+
+.record main h1 {
+    font-size: 2rem;
+}
+
+.record main h2 {
+    font-size: 1.8rem;
+}
+
+.record main h3 {
+    font-size: 1.6rem;
+}
+
+.record main a {
+    word-wrap: break-word;
+}
+
+.record main a.record-link {
+    color: #337ab7;
+}
+
+a.record-link.highlight {
+    font-style: normal;
+    background-color: rgba(255, 255, 182, 1);
+}
+
+.record main ul,
+.record main ol {
+    padding-left: 2.5rem;
+}
+
+.record main ul li,
+.record ol li {
+    margin: 0.8rem 0 0 0;
+}
+
+.record main pre {
+    overflow: auto;
+    font-size: 90%;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: var(--background-gray);
+}
+
+.record main blockquote {
+    border-left: 5px solid var(--border-color);
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.record main table {
+    border-collapse: collapse;
+    margin: 2.5rem 0;
+    text-align: left;
+    width: 100%;
+}
+
+.record main tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.record main th,
+.record main td {
+    padding: 0.8rem;
+}
+
+.record main hr {
+    background: var(--border-color);
+    border: 0;
+    height: 1px;
+    margin: 2.5rem 0;
+}
+
+/* ---
+    
+    Record bibliography --- */
+.record .bibliography div+div {
+    margin-top: 1.5rem;
+}
+
+.record div.csl-entry {
+    width: inherit;
+    text-indent: -2rem;
+    padding-left: 2rem;
+    margin: 1rem 0 0 0;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+}
+
+/* ---
+    
+    Record footer --- */
+.record footer {
+    margin-top: 3.5rem;
+    border-top: 1px solid var(--gray);
+}
+
+.record footer li {
+    /* links & backlinks */
+    position: relative;
+}
+
+.record footer li .record-links-context {
+    background: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    bottom: calc(100% + 10px);
+    box-shadow: var(--shadow);
+    text-indent: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
