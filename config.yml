@@ -1,0 +1,77 @@
+select_origin: online
+files_origin: ""
+nodes_origin: ""
+links_origin: ""
+nodes_online: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTOnUqhqOQd2HO6DCfueLLEMEHsj3DypvihwU6oe9fmTqijiQlWEEusmqU6b_dtif5kk0qikEutRDx5/pub?gid=0&single=true&output=csv"
+links_online: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTOnUqhqOQd2HO6DCfueLLEMEHsj3DypvihwU6oe9fmTqijiQlWEEusmqU6b_dtif5kk0qikEutRDx5/pub?gid=1233026049&single=true&output=csv"
+images_origin: ""
+export_target: ""
+history: true
+focus_max: 2
+record_types:
+  undefined:
+    fill: "#7A7A3E"
+    stroke: "#858585"
+  Gouvernement:
+    fill: "#E63946"  # Bright red
+    stroke: "#2A9D8F"  # Teal
+  Organisation non gouvernementale:
+    fill: "#F4A261"  # Sandy brown
+    stroke: "#264653"  # Dark blue
+  Entreprises privées:
+    fill: "#2A9D8F"  # Teal green
+    stroke: "#E9C46A"  # Saffron
+  Individuels:
+    fill: "#F77F00"  # Bright orange
+    stroke: "#003049"  # Dark blue
+  Connexion:
+    fill: "#9C89B8"  # Soft purple
+    stroke: "#F0A6CA"  # Pink
+  Gouvernement Locale:
+    fill: "#43AA8B"  # Sea green
+    stroke: "#577590"  # Cool grey
+  Gouvernement Federale:
+    fill: "#7400B8"  # Vivid purple
+    stroke: "#4EA8DE"  # Sky blue
+  Lieux:
+    fill: "#0077B6"  # Deep sky blue
+    stroke: "#FAD02E"  # Sunflower yellow
+  Mouvement activiste:
+    fill: "#E76F51"  # Burnt sienna
+    stroke: "#88B04B"  # Bud green
+link_types:
+  undefined:
+    stroke: simple
+    color: "#e1e1e1"
+references_as_nodes: false
+references_type_label: references
+record_filters: []
+graph_background_color: "#ffffff"
+graph_highlight_color: "#ff6a6a"
+graph_highlight_on_hover: true
+graph_text_size: 10
+graph_arrows: true
+node_size_method: degree
+node_size: 10
+node_size_max: 20
+node_size_min: 2
+attraction_force: 200
+attraction_distance_max: 250
+attraction_vertical: 0
+attraction_horizontal: 0
+views: {}
+record_metas: []
+generate_id: always
+link_context: tooltip
+hide_id_from_record_header: false
+title: ""
+author: ""
+description: ""
+keywords: []
+link_symbol: ""
+csl: ""
+bibliography: ""
+csl_locale: ""
+css_custom: ""
+devtools: false
+lang: en
